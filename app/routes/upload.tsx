@@ -7,7 +7,7 @@ import FileUploader from "~/components/FileUploader";
 import Navbar from "~/components/Navbar";
 import { prepareInstructions } from "../../constants/index";
 
-function upload() {
+function Upload() {
   const { auth, isLoading, fs, ai, kv } = usePuterStore();
   const [isProcessing, setIsProcessing] = useState(false);
   const [statusText, setStatusText] = useState("");
@@ -75,7 +75,7 @@ function upload() {
     data.feedback = JSON.parse(feedbackText);
     await kv.set(`resume:${uuid}`, JSON.stringify(data));
     setStatusText("Analysis complete, redirecting...");
-    console.log(data);
+    navigate(`/resume/${uuid}`);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -155,4 +155,4 @@ function upload() {
   );
 }
 
-export default upload;
+export default Upload;

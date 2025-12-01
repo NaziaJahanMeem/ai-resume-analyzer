@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router";
 
 export const meta = () => {
   return [
-    { title: "Auth - HireBoost" },
+    { title: "HireBoost - Authentication" },
     { name: "description", content: "Log in to your account." },
   ];
 };
